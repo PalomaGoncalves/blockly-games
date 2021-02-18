@@ -41,7 +41,7 @@
     // Buttons and tooltips.
     <span id="Games_linkTooltip">{msg meaning="Games.linkTooltip" desc="tooltip - Pressing this button will cause the current program to be saved and for a URL to be shown to later retrieve it."}Save and link to blocks.{/msg}</span>
     <span id="Games_runTooltip">{msg meaning="Games.runTooltip" desc="tooltip - Pressing this button runs the computer program the user has written."}Run the program you wrote.{/msg}</span>
-    <span id="Games_runProgram">{msg meaning="Games.runProgram" desc="button label - Pressing this button runs the computer program the user has written."}Run Program{/msg}</span>
+    <span id="Games_runProgram">{msg meaning="Games.runProgram" desc="button label - Pressing this button runs the computer program the user has written."}Run{/msg}</span>
     <span id="Games_resetTooltip">{msg meaning="Games.resetTooltip" desc="tooltip - Pressing this button restores the player to the start position and enables the user's program to be run again."}Stop the program and reset the level.{/msg}</span>
     <span id="Games_resetProgram">{{msg meaning="Games.resetProgram" desc="button label - Pressing this button causes the output of the program to be erased but does not delete the user's program).\n{lb}{lb}Identical|Reset{rb}{rb}"}}Reset{{/msg}}</span>
     <span id="Games_help">{{msg meaning="Games.help" desc="button label - Pressing this button shows help information.\n{lb}{lb}Identical|Help{rb}{rb}"}}Help{{/msg}}</span>
@@ -122,19 +122,16 @@
 {/template}
 
 /**
- * Print the title span (Blockly Games : AppName).
+ * Print the title span (AppName).
  * @param appName Name of application.
  */
 {template .titleSpan private="true"}
   <span id="title">
     {if $ij.html}
-      <a href="index.html?lang={$ij.lang}">
+      <a href="index.html?lang={$ij.lang}"></a>
     {else}
-      <a href="./?lang={$ij.lang}">
     {/if}
-      {msg meaning="Games.name" desc="IBID"}Blockly Games{/msg}
-    </a>
-    {sp}:{sp}
+      {msg meaning="Games.name" desc="IBID"}Guiding Edith{/msg}
     {$appName}
   </span>
 {/template}
@@ -144,10 +141,10 @@
  * @param suffix Any extra parameters for links.
  */
 {template .levelLinks private="true"}
-  {sp}&nbsp;{sp}
+  {sp}&nbsp;{sp}{sp}&nbsp;{sp}
   {for $i in range(1, $ij.maxLevel + 1)}
     {let $url}
-      ?lang={$ij.lang}&level={$i}
+      ?level={$i}
       {if $suffix}
         &{$suffix}
       {/if}
@@ -161,6 +158,7 @@
       <a class="level_dot" id="level{$i}" href="{$url}"></a>
     {/if}
   {/for}
+  <button id="clearDataPara" class="third">Start over</button>
 {/template}
 
 /**
@@ -186,7 +184,7 @@
         {{msg meaning="Games.dialogCancel" desc="IBID"}}Cancel{{/msg}}
       </button>
       <button id="doneOk" class="secondary">
-        {{msg meaning="Games.dialogOk" desc="IBID"}}OK{{/msg}}
+        {{msg meaning="Games.dialogOk" desc="IBID"}}Next level{{/msg}}
       </button>
     </div>
   </div>

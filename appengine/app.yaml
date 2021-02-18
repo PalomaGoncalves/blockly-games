@@ -42,11 +42,11 @@ handlers:
   secure: always
 
 # Maze app.
-- url: /maze
+- url: /edith
   static_files: maze.html
   upload: maze\.html
   secure: always
-- url: /maze/
+- url: /edith/
   static_dir: maze
   secure: always
 

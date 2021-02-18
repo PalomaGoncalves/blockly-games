@@ -122,8 +122,10 @@ Blockly.JavaScript['maze_if'] = function(block) {
   // Generate JavaScript for 'if' conditional if there is a path.
   var argument = block.getFieldValue('DIR') +
       '(\'block_id_' + block.id + '\')';
+      console.log(block.id)
   var branch = Blockly.JavaScript.statementToCode(block, 'DO');
   var code = 'if (' + argument + ') {\n' + branch + '}\n';
+  
   return code;
 };
 
@@ -189,4 +191,52 @@ Blockly.JavaScript['maze_forever'] = function(block) {
         '\'block_id_' + block.id + '\'') + branch;
   }
   return 'while (notDone()) {\n' + branch + '}\n';
+};
+//-------------
+
+Blockly.Blocks['maze_loop'] = {
+  /**
+   * Block for repeat loop.
+   * @this {Blockly.Block}
+   */
+  init: function() {
+    this.setColour(Maze.Blocks.LOOPS_HUE);
+    this.appendDummyInput()
+        .appendField("Repeat")
+        .appendField(new Blockly.FieldDropdown([["1","1"], ["2","2"], ["3","3"], ["4","4"], ["5","5"], ["6","6"], ["7","7"], ["8","8"], ["9","9"], ["10","10"]]), "number")
+        .appendField("times")
+    this.appendStatementInput('DO')
+        .appendField(BlocklyGames.getMsg('Maze_doCode'));
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setTooltip(BlocklyGames.getMsg('Maze_whileTooltip'));
+  }
+};
+
+Blockly.JavaScript['maze_loop'] = function(block) {
+  // Generate JavaScript for repeat loop.
+  var argument = block.getFieldValue('number');
+  var branch = Blockly.JavaScript.statementToCode(block, 'DO');
+  var code = '';
+  for (var i = 0; i < argument; i++){
+    code += '{\n' + branch + '}\n';
+  }
+  return code;
+
+};
+
+Blockly.Blocks['main'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Execute:");
+    this.setNextStatement(true, null);
+    this.setColour(0);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+}
+
+Blockly.JavaScript['main'] = function() {
+  // Generate JavaScript for handling click event.
+  return '\n';
 };

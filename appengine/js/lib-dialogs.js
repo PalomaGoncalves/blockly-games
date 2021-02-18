@@ -51,11 +51,12 @@ BlocklyDialogs.dialogDispose_ = null;
  */
 BlocklyDialogs.showDialog = function(content, origin, animate, modal, style,
                                      disposeFunc) {
+                                       
   if (!content) {
     throw TypeError('Content not found: ' + content);
   }
   if (BlocklyDialogs.isDialogVisible_) {
-    BlocklyDialogs.hideDialog(false);
+    BlocklyDialogs.hideDialog(true);
   }
   if (Blockly.getMainWorkspace()) {
     // Some levels have an editor instead of Blockly.
@@ -351,7 +352,7 @@ BlocklyDialogs.congratulations = function() {
   var style = {
     width: '40%',
     left: '30%',
-    top: '3em'
+    top: '50%'
   };
 
   // Add the user's code.
@@ -379,7 +380,7 @@ BlocklyDialogs.congratulations = function() {
       var text = BlocklyGames.getMsg('Games_linesOfCode2')
           .replace('%1', String(lineCount));
     }
-    linesText.appendChild(document.createTextNode(text));
+    //linesText.appendChild(document.createTextNode(text));
   }
 
   if (BlocklyGames.LEVEL < BlocklyGames.MAX_LEVEL) {

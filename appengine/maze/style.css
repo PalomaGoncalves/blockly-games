@@ -1,16 +1,15 @@
 #blockly {
+
   position: fixed;
-  bottom: 10px;
+  bottom: 20px;
 }
 #visualization {
-  position: relative;
+  height: 280px;
 }
 #capacityBubble {
-  position: absolute;
   margin-top: -0.5em;
   left: 10px;
-  top: 375px;
-  width: 380px;
+  width: 300px;
 }
 html[dir="RTL"] #capacityBubble {
   left: auto;
@@ -60,9 +59,16 @@ img[src$="help_down.png"] {
   width: 23px;
 }
 
-#svgMaze {
-  overflow: hidden;
+img[src$="attention.png"] {
+  height: 60px;
+  width: 60px;
 }
+
+#svgMaze {
+  overflow: visible;
+}
+
+
 
 /* 'Look' icon */
 #look>path {
@@ -79,12 +85,14 @@ button.primary {
   text-align: left;
 }
 html[dir="RTL"] button.primary {
+  background-position: 75% 25%;
   text-align: right;
 }
 
 #pegmanButton {
   padding: 0;
   position: relative;
+  display: none;
 }
 #pegmanButton:active {
   border: 1px solid #ddd !important;
@@ -126,4 +134,48 @@ html[dir="RTL"] #pegmanButton>span {
   height: 38px;
   width: 49px;
   background-position: -980px 0;
+}
+
+#clearDataPara {
+  position: relative;
+  bottom: 0;
+  margin: 1em;
+}
+
+#clearData {
+  padding: 0;
+  position: relative;
+  margin: 5px 10px;
+  font-size: medium;
+}
+
+#footer {
+  position: fixed;
+  bottom: 0px;
+
+}
+
+img[src$="common/PIAF.png"] {
+  height: 55px;
+  width: 130px;
+  margin-right: 10%;
+  margin-top:10px
+}
+
+img[src$="common/erasmus.png"] {
+  height: 55px;
+  width: 250px;
+  margin-right: 10%;
+  margin-top:10px;
+}
+
+img[src$="common/edu.png"] {
+  height: 55px;
+  width: 60px;
+  margin-left: 10%;
+  margin-top:10px;
+}
+
+.tbl {
+  width: 100%;
 }

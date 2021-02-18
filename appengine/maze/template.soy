@@ -46,19 +46,148 @@
   {call .messages /}
   {call BlocklyGames.soy.headerBar}
     {param appName}
-      {msg meaning="Games.maze" desc="IBID"}Maze{/msg}
+      {msg meaning="Games.maze" desc="IBID"}{/msg}
     {/param}
-    {param levelLinkSuffix}skin={$ij.skin}{/param}
     {param hasLinkButton: true /}
     {param hasHelpButton: false /}
     {param farLeftHtml}
+     <div id="sponsors">
+     <table class="tbl">
+     <tr><td>
+      <img src="common/PIAF.png"  width="130" height="70"></td>
+      <td>
+      <img src="common/erasmus.png" width="230" height="70"></td>
+      <td>
+      <img src="common/edu.png" width="60" height="70"></td>
+    </table>
+    </div>
       <button id="pegmanButton">
         <img src="common/1x1.gif">
         <span id="pegmanButtonArrow"></span>
       </button>
     {/param}
   {/call}
+  <div id="test">
+  <div id="inst"><p> Instructions </p></div>
+    {call BlocklyGames.soy.dialog /}
+  {call BlocklyGames.soy.doneDialog /}
+  {call BlocklyGames.soy.abortDialog /}
+  {call BlocklyGames.soy.storageDialog /}
 
+  {if $ij.level == 1}
+  <p id="text">On the following exercises, you will help Edith reach the different places in her new school. Her first challenge is to reach the school entry</p>
+  <p id="text">Move and connect the necessary amount of blocks in the Editor to allow Edith reach the school entry. Don’t forget to click on ‘run’ to let Edith follow the instructions</p> 
+  <div id="dialogHelpReset" class="dialogHiddenContent">
+    <table><tr><td>
+      <img src="maze/attention.png">
+    </td><td width="95%">
+      {msg meaning="Maze.helpReset" desc="callout - This is shown after the user has run a program that does not solve the maze."}Edith couldn’t reach the school entry. Press 'Reset' and try again!{/msg}
+    </td></tr></table>
+  </div>
+  
+
+  {elseif $ij.level == 2}
+  <p id="text">Now Edith needs to go to Classroom 101. Can you help her reach the Classroom on time?</p>
+  <p id="text">Move and connect the necessary amount of blocks in the Editor to allow Edith reach Classroom 101. Don’t forget to click on ‘run’ to let Edith follow the instructions</p>
+  <div id="dialogHelpReset" class="dialogHiddenContent">
+    <table><tr><td>
+      <img src="maze/attention.png">
+    </td><td width="95%">
+      {msg meaning="Maze.helpReset" desc="callout - This is shown after the user has run a program that does not solve the maze."}Edith couldn’t reach the Classroom 101. Press 'Reset' and try again!{/msg}
+    </td></tr></table>
+  </div>
+
+  {elseif $ij.level == 3}
+    <p id="text">Edith is now inside the Classroom 101. She already has a desk assigned for her. Her desk is Green. Can you help her reach her desk?</p>
+    <p id="text">Connect the necessary blocks to ensure Edith reaches the correct desk. You can adjust the “turn” block and Edith can turn left or right</p>
+    <div id="dialogHelpReset" class="dialogHiddenContent">
+      <table><tr><td>
+        <img src="maze/attention.png">
+      </td><td width="95%">
+        {msg meaning="Maze.helpReset" desc="callout - This is shown after the user has run a program that does not solve the maze."}Edith couldn’t reach her desk. Press 'Reset' and try again!{/msg}
+      </td></tr></table>
+    </div>
+
+  {elseif $ij.level == 4}
+    <p id="text">Class is over. Help Edith exit the classroom</p>
+    <p id="text">Faulty code! You can see blocks in the Editor area but 1 block is wrong. Fix the block so Edith can exit the classroom.</p>
+    <div id="dialogHelpReset" class="dialogHiddenContent">
+      <table><tr><td>
+        <img src="maze/attention.png">
+      </td><td width="95%">
+        {msg meaning="Maze.helpReset" desc="callout - This is shown after the user has run a program that does not solve the maze."}Edith couldn’t exit the classroom. Press 'Reset' and try again!{/msg}
+      </td></tr></table>
+    </div>
+
+  {elseif $ij.level == 5}
+    <p id="text">Edith now needs to go to Classroom 105. Can you help her arrive on time?</p>
+    <p id="text">In the Toolbox you will find a new block: the “Repeat” block. Use this block for repeating 1 or more blocks the amount of times you want</p>
+    <div id="dialogHelpReset" class="dialogHiddenContent">
+      <table><tr><td>
+        <img src="maze/attention.png">
+      </td><td width="95%">
+        {msg meaning="Maze.helpReset" desc="callout - This is shown after the user has run a program that does not solve the maze."}Edith couldn’t reach Classroom 105. Press 'Reset' and try again!{/msg}
+      </td></tr></table>
+    </div>
+    
+  {elseif $ij.level == 6}
+    <p id="text">Edith is inside classroom 105. Can you help her reach her green desk?</p>
+    <p id="text">On the Viewer area, it indicates the amount of blocks you can use in the Editor area. Be careful to only use the necessary ones!</p>
+    <div id="dialogHelpReset" class="dialogHiddenContent">
+      <table><tr><td>
+        <img src="maze/attention.png">
+      </td><td width="95%">
+        {msg meaning="Maze.helpReset" desc="callout - This is shown after the user has run a program that does not solve the maze."}Edith couldn’t reach her desk. Press 'Reset' and try again!{/msg}
+      </td></tr></table>
+    </div>
+    
+  {elseif $ij.level == 7}
+    <p id="text">Class is over and recess is starting. Help Edith exit the classroom.</p>
+    <p id="text">Faulty code! Correct the 3 errors in the blocks on the Editor area</p>
+    <div id="dialogHelpReset" class="dialogHiddenContent">
+      <table><tr><td>
+        <img src="maze/attention.png">
+      </td><td width="95%">
+        {msg meaning="Maze.helpReset" desc="callout - This is shown after the user has run a program that does not solve the maze."}Edith couldn’t exit the classroom. Press 'Reset' and try again!{/msg}
+      </td></tr></table>
+    </div>
+
+  {elseif $ij.level == 8}
+    <p id="text">Recess started! Time to go to the cafeteria!</p>
+    <p id="text">There’s a new block you can use, the “repeat until goal” block. With this block, any block inside it will be repeated until Edith reaches the goal</p>
+    <div id="dialogHelpReset" class="dialogHiddenContent">
+      <table><tr><td>
+        <img src="maze/attention.png">
+      </td><td width="95%">
+        {msg meaning="Maze.helpReset" desc="callout - This is shown after the user has run a program that does not solve the maze."}Edith couldn’t get to the cafeteria. Press 'Reset' and try again!{/msg}
+      </td></tr></table>
+    </div>
+
+  {elseif $ij.level == 9}
+    <p id="text">Help Edith get her lunch meal by passing through the food area and then help her find a place to sit. </p>
+    <p id="text">There’s another new block, the “if path” block. With this block you can code a specific action for Edith in case she finds path ahead, to the left or to the right. Use it in combination of the “repeat until goal” block to help Edith reach her goal. Remember: If you use the “repeat until goal” and Edith doesn’t reach her goal, the code will be repeated infinitely! In case this happens, press the “Reset” button on the Viewer to stop the code. </p>
+    <div id="dialogHelpReset" class="dialogHiddenContent">
+      <table><tr><td>
+        <img src="maze/attention.png">
+      </td><td width="95%">
+        {msg meaning="Maze.helpReset" desc="callout - This is shown after the user has run a program that does not solve the maze."}Edith couldn’t reach a table in the cafeteria. Press 'Reset' and try again!{/msg}
+      </td></tr></table>
+    </div>
+
+  {elseif $ij.level == 10}
+    <p id="text"> Edith has finished her lunch meal and wants to go to the school playground. But first she needs to leave her food tray.</p>
+    <p id="text"> Use the necessary “if path” blocks to help Edith reach her goal. </p>
+    <div id="dialogHelpReset" class="dialogHiddenContent">
+      <table><tr><td>
+        <img src="maze/attention.png">
+      </td><td width="95%">
+        {msg meaning="Maze.helpReset" desc="callout - This is shown after the user has run a program that does not solve the maze."}Edith couldn’t exit the cafeteria. Press 'Reset' and try again!{/msg}
+      </td></tr></table>
+    </div>
+
+  {/if}
+  </div>
+ 
   <div id="visualization">
     <svg xmlns="http://www.w3.org/2000/svg" version="1.1" id="svgMaze" width="400px" height="400px">
       <g id="look">
@@ -67,154 +196,39 @@
         <path d="M 0,-55 a 55 55 0 0 1 55 55" />
       </g>
     </svg>
-    <div id="capacityBubble">
-      <div id="capacity"></div>
-    </div>
   </div>
-
+ 
   <table width="400">
     <tr>
+    <td>
+        <div id="capacityBubble">
+          <div id="capacity"></div>
+        </div>
+        </td>
+        </tr><tr>
       <td style="width: 190px; text-align: center; vertical-align: top;">
+      
       <td>
         <button id="runButton" class="primary" title="{msg meaning="Maze.runTooltip" desc="tooltip - Pressing this button runs the computer program the user has written to move the player through the maze."}Makes the player do what the blocks say.{/msg}">
-          <img src="common/1x1.gif" class="run icon21"> {msg meaning="Games.runProgram" desc="IBID"}Run Program{/msg}
+          <img src="common/1x1.gif" class="run icon21"> {msg meaning="Games.runProgram" desc="IBID"}Run{/msg}
         </button>
         <button id="resetButton" class="primary" style="display: none" title="{msg meaning="Maze.resetTooltip" desc="tooltip - Pressing this button restores the player to the start position and enables the user's program to be run again."}Put the player back at the start of the maze.{/msg}">
           <img src="common/1x1.gif" class="stop icon21"> {msg meaning="Games.resetProgram" desc="IBID"}Reset{/msg}
         </button>
+ 
       </td>
     </tr>
   </table>
 
   {call .toolbox /}
   <div id="blockly"></div>
-
   <div id="pegmanMenu"></div>
+     
+      
 
-  {call BlocklyGames.soy.dialog /}
-  {call BlocklyGames.soy.doneDialog /}
-  {call BlocklyGames.soy.abortDialog /}
-  {call BlocklyGames.soy.storageDialog /}
-
-  {if $ij.level == 1}
-    <div id="dialogHelpStack" class="dialogHiddenContent">
-      <table><tr><td>
-        <img src="common/help.png">
-      </td><td>&nbsp;</td><td>
-        {msg meaning="Maze.helpStack" desc="callout - The word words for 'stack' and 'blocks' should be the same as for stacking children's blocks. Use the imperative verb form appropriate for speaking to a child, gender unspecified.  If no gender-neutral singular/familiar form exists but a gender-neutral plural/formal form exists, use that instead.  Be sure to use the same translation of 'move forward' as above."}Stack a couple of 'move forward' blocks together to help me reach the goal.{/msg}
-      </td><td valign="top">
-        <img src="maze/help_stack.png" class="mirrorImg" height=63 width=136>
-      </td></tr></table>
-    </div>
-    <div id="dialogHelpOneTopBlock" class="dialogHiddenContent">
-      <table><tr><td>
-        <img src="common/help.png">
-      </td><td>&nbsp;</td><td>
-        {msg meaning="Maze.helpOneTopBlock" desc="callout - This is displayed if a user attempts to run a program composed of multiple stacks of blocks, letting them know they need to create a single stack."}On this level, you need to stack together all of the blocks in the white workspace.{/msg}
-        <div id="sampleOneTopBlock" class="readonly"></div>
-      </td></tr></table>
-    </div>
-    <div id="dialogHelpRun" class="dialogHiddenContent">
-      <table><tr><td>
-        {msg meaning="Maze.helpRun" desc="callout - This is shown after the user has created a program on the first level."}Run your program to see what happens.{/msg}
-      </td><td rowspan=2>
-        <img src="common/help.png">
-      </td></tr><tr><td>
-        <div><img src="maze/help_run.png" class="mirrorImg" height=27 width=141></div>
-      </td></tr></table>
-    </div>
-  {elseif $ij.level == 2}
-    <div id="dialogHelpReset" class="dialogHiddenContent">
-      <table><tr><td>
-        {msg meaning="Maze.helpReset" desc="callout - This is shown after the user has run a program that does not solve the maze."}Your program didn't solve the maze. Press 'Reset' and try again.{/msg}
-      </td><td rowspan=2>
-        <img src="common/help.png">
-      </td></tr><tr><td>
-        <div><img src="maze/help_run.png" class="mirrorImg" height=27 width=141></div>
-      </td></tr></table>
-    </div>
-  {elseif $ij.level == 3 or $ij.level == 4}
-    {if $ij.level == 3}
-      <div id="dialogHelpRepeat" class="dialogHiddenContent">
-        <table><tr><td>
-          <img src="maze/help_up.png">
-        </td><td>
-          {msg meaning="Maze.helpRepeat" desc="callout - This is shown when the 'repeat' block is introduced.  The word 'path' refers to a path through a maze, and 'block' refers to a child's building block."}Reach the end of this path using only two blocks. Use 'repeat' to run a block more than once.{/msg}
-        </td><td>
-          <img src="common/help.png">
-        </td></tr></table>
-      </div>
-    {/if}
-    <div id="dialogHelpCapacity" class="dialogHiddenContent">
-      <table><tr><td>
-        <img src="common/help.png">
-      </td><td>&nbsp;</td><td>
-        {msg meaning="Maze.helpCapacity" desc="callout - This is shown after the user has used all the blocks permitted on this level."}You have used up all the blocks for this level. To create a new block, you first need to delete an existing block.{/msg}
-      </td></tr></table>
-    </div>
-    <div id="dialogHelpRepeatMany" class="dialogHiddenContent">
-      <table><tr><td>
-        <img src="maze/help_up.png">
-      </td><td>
-        {msg meaning="Maze.helpRepeatMany" desc="callout - This is a hint that the user should place a second block inside of a a 'repeat' block."}You can fit more than one block inside a 'repeat' block.{/msg}
-      </td><td>
-        <img src="common/help.png">
-      </td></tr></table>
-    </div>
-  {elseif $ij.level == 5}
-    <div id="dialogHelpSkins" class="dialogHiddenContent">
-      <table><tr><td>
-        <img src="common/help.png">
-      </td><td width="95%">
-        {{msg meaning="Maze.helpSkins" desc="callout - This is a hint that the user can change the appearance of the player that moves within the maze."}}Choose your favourite player from this menu.{{/msg}}
-      </td><td>
-        <img src="maze/help_up.png">
-      </td></tr></table>
-    </div>
-  {elseif $ij.level == 6}
-    <div id="dialogHelpIf" class="dialogHiddenContent">
-      <table><tr><td>
-        <img src="maze/help_up.png">
-      </td><td>
-        {msg meaning="Maze.helpIf" desc="callout - This is shown when the 'if' block is introduced.  An example of an 'if' block is: 'if there is a path to the left, turn left'."}An 'if' block will do something only if the condition is true. Try turning left if there is a path to the left.{/msg}
-      </td><td>
-        <img src="common/help.png">
-      </td></tr></table>
-    </div>
-  {elseif $ij.level == 7}
-    <div id="dialogHelpMenu" class="dialogHiddenContent">
-      <table><tr><td>
-        <img src="maze/help_up.png">
-      </td><td id="helpMenuText">
-        {msg meaning="Maze.helpMenu" desc="callout - %1 will be replaced with an image of the dropdown menu that the user needs to click."}Click on %1 in the 'if' block to change its condition.{/msg}
-      </td><td>
-        <img src="common/help.png">
-      </td></tr></table>
-    </div>
-  {elseif $ij.level == 9}
-    <div id="dialogHelpIfElse" class="dialogHiddenContent">
-      <table><tr><td>
-        <img src="maze/help_down.png">
-      </td><td>
-        {msg meaning="Maze.helpIfElse" desc="IBID"}
-          If-else blocks will do one thing or the other.
-        {/msg}
-      </td><td>
-        <img src="common/help.png">
-      </td></tr></table>
-    </div>
-  {elseif $ij.level == 10}
-    <div id="dialogHelpWallFollow" class="dialogHiddenContent">
-      <table><tr><td>
-        <img src="common/help.png">
-      </td><td>&nbsp;</td><td>
-        {msg meaning="Maze.helpWallFollow" desc="callout - This advises the user to solve a maze by keeping his/her left hand in contact with the wall while proceeding through it.  The final sentence is a warning that only advanced programmers should attempt this problem, as beginners tend to get frustrated."}
-          Can you solve this complicated maze? Try following the left-hand wall. Advanced programmers only!
-        {/msg}
-        {call BlocklyGames.soy.ok /}
-      </td></tr></table>
-    </div>
-  {/if}
+   
+  
+  
 {/template}
 
 /**
@@ -222,19 +236,52 @@
  */
 {template .toolbox}
   <xml id="toolbox" xmlns="https://developers.google.com/blockly/xml">
-    <block type="maze_moveForward"></block>
-    <block type="maze_turn"><field name="DIR">turnLeft</field></block>
-    <block type="maze_turn"><field name="DIR">turnRight</field></block>
-    {if $ij.level > 2}
+    {if $ij.level == 1}
+      <block type="maze_moveForward"></block>
+    {/if}
+    {if $ij.level == 2}
+      <block type="maze_moveForward"></block>
+      <block type="maze_turn"><field name="DIR">turnLeft</field></block>
+    {/if}
+    {if $ij.level == 3}
+      <block type="maze_moveForward"></block>
+      <block type="maze_turn"><field name="DIR">turnLeft</field></block>
+    {/if}
+    {if $ij.level == 4}
+      <block type="maze_moveForward"></block>
+      <block type="maze_turn"><field name="DIR">turnRight</field></block>
+    {/if}
+    {if $ij.level == 5}
+      <block type="maze_moveForward"></block>
+      <block type="maze_turn"><field name="DIR">turnRight</field></block>
+      <block type="maze_loop"></block>
+    {/if}
+    {if $ij.level == 6}
+      <block type="maze_moveForward"></block>
+      <block type="maze_turn"><field name="DIR">turnRight</field></block>
+      <block type="maze_loop"></block>
+    {/if}
+    {if $ij.level == 7}
+      <block type="maze_moveForward"></block>
+      <block type="maze_turn"><field name="DIR">turnRight</field></block>
+      <block type="maze_loop"></block>
+    {/if}
+    {if $ij.level == 8}
+      <block type="maze_moveForward"></block>
+      <block type="maze_turn"><field name="DIR">turnRight</field></block>
       <block type="maze_forever"></block>
-      {if $ij.level == 6}
-        <block type="maze_if"><field name="DIR">isPathLeft</field></block>
-      {elseif $ij.level > 6}
-        <block type="maze_if"></block>
-        {if $ij.level > 8}
-          <block type="maze_ifElse"></block>
-        {/if}
-      {/if}
+    {/if}
+    {if $ij.level == 9}
+      <block type="maze_moveForward"></block>
+      <block type="maze_turn"><field name="DIR">turnRight</field></block>
+      <block type="maze_forever"></block>
+      <block type="maze_if"></block>
+    {/if}
+    {if $ij.level == 10}
+      <block type="maze_moveForward"></block>
+      <block type="maze_turn"><field name="DIR">turnRight</field></block>
+      <block type="maze_forever"></block>
+      <block type="maze_if"></block>
     {/if}
   </xml>
 {/template}

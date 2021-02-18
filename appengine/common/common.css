@@ -1,11 +1,11 @@
 body {
   background-color: #fff;
-  font-family: sans-serif;
   margin-top: 0;
 }
 h1 {
   font-weight: normal;
-  font-size: 130%;
+  font-size: 100%;
+  margin-bottom: 0%;
 }
 h1 a {
   text-decoration: none;
@@ -20,23 +20,24 @@ a:hover {
   vertical-align: middle;
 }
 html[dir="RTL"] .farSide {
-  text-align: left;
+  text-align: center;
 }
 .level_number {
   border: solid 1px #ddd;
-  border-radius: 20px;
-  padding: 6px 12px;
+  border-radius: 10px;
+  padding: 2px 5px;
   color: #888;
+  font-size: medium;
 }
 .level_dot {
   border: solid 1px #ddd;
-	border-radius: 50%;
-	width: 15px;
-	height: 15px;
+	border-radius: 30%;
+	width: 10px;
+	height: 10px;
   display: inline-block;
 }
 .level_done, .level_dot:hover, .level_number:hover {
-  background-color: #ddd;
+  background-color:#0997d8;
   color: #000;
 }
 #containerCode {
@@ -47,11 +48,35 @@ html[dir="RTL"] .farSide {
   font-size: large;
   overflow: auto;
   max-height: 200px;
+  display: none;
 }
 
 img[src$="help.png"] {
   height: 64px;
   width: 64px;
+}
+.aligncenter {
+  text-align: center;
+}
+img[src$="common/PIAF.png"] {
+  height: 50px;
+  width: 130px;
+  margin-right: 10%;
+  margin-top:10px
+}
+
+img[src$="common/erasmus.png"] {
+  height: 50px;
+  width: 250px;
+  margin-right: 10%;
+  margin-top:10px;
+}
+
+img[src$="common/edu.png"] {
+  height: 50px;
+  width: 90px;
+  margin-left: 10%;
+  margin-top:10px;
 }
 
 html[dir="RTL"] .mirrorImg {
@@ -60,6 +85,7 @@ html[dir="RTL"] .mirrorImg {
 
 #languageMenu {
   margin: 16px 0;
+  display: none;
 }
 
 xml {
@@ -68,23 +94,32 @@ xml {
 
 /* Buttons */
 button {
-  margin: 5px;
-  padding: 10px;
+  margin: 0px;
+  padding: 5px;
+  align-items: baseline;
   border-radius: 4px;
-  border: 1px solid #ddd;
-  font-size: large;
-  background-color: #eee;
+  /* border: 1px solid #ddd; */
+  font-size: medium;
+  /* background-color: #eee; */
   color: #000;
 }
 button.primary {
-  border: 1px solid #dd4b39;
-  background-color: #dd4b39;
+  border: 1px solid #0997d8;
+  background-color: #0997d8;
   color: #fff;
+  font-size: large;
 }
 button.secondary {
-  border: 1px solid #4d90fe;
-  background-color: #4d90fe;
+  border: 1px solid #0997d8;
+  background-color: #0997d8;
   color: #fff;
+}
+button.third {
+  border: 1px solid #0997d8;
+  background-color: #0997d8;
+  color: #fff;
+  font-size: medium;
+
 }
 button.primary>img,
 button.secondary>img {
@@ -109,18 +144,20 @@ button:hover:not(:disabled) {
   visibility: hidden;
   background-color: #fff;
   color: #000;
-  border: 1px solid #ccc;
+  border: 3px solid #ccc;
   position: absolute;
   border-radius: 8px;
+  border: 4px solid rgb(201, 9, 9);
   box-shadow: 5px 5px 5px #888;
   padding: 10px;
+  top: 200;
 }
 #dialogBorder {
   visibility: hidden;
   position: absolute;
   background-color: #fff;
   color: #000;
-  border: 1px solid #000;
+  border: 4px solid rgb(201, 9, 9);
   border-radius: 6px;
   box-shadow: 5px 5px 5px #888;
 }
@@ -132,7 +169,7 @@ button:hover:not(:disabled) {
   height: 100%;
   width: 100%;
   background-color: #000;
-  opacity: .3
+  opacity: .3;
 }
 .dialogAnimate {
   transition-property: width height left top opacity;
@@ -145,6 +182,8 @@ button:hover:not(:disabled) {
   top: 0;
   left: 0;
   z-index: -1;
+  border: 3px solid rgb(201, 9, 9);
+
 }
 #dialogHeader {
   height: 25px;
@@ -153,6 +192,8 @@ button:hover:not(:disabled) {
   border-top-right-radius: 8px;
   background-color: #ddd;
   cursor: move;
+  /* border: 3px solid rgb(201, 9, 9); */
+
 }
 #dialog button {
   min-width: 4em;
@@ -193,3 +234,25 @@ button:hover:not(:disabled) {
 .close {
   background-position: -42px -42px;
 }
+
+#test {
+  background-color: #fff;
+  color: #000;
+  border: 1px solid #000;
+  border-radius: 6px;
+  box-shadow: 5px 5px 5px #888;
+  margin-bottom: 15px;
+}
+#inst {
+  background-color: #fff;
+  color: #000;
+  border: 1px solid #000;
+  border-radius: 6px;
+  text-align: center;
+   
+}
+#text {
+  padding-left: 15px;
+}
+
+

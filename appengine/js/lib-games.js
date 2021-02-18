@@ -240,7 +240,7 @@ BlocklyGames.init = function() {
   var viewport = document.querySelector('meta[name="viewport"]');
   if (viewport && screen.availWidth < 725) {
     viewport.setAttribute('content',
-        'width=725, initial-scale=.35, user-scalable=no');
+        'width=725, height=600, initial-scale=.35, user-scalable=yes');
   }
 
   // Lazy-load Google analytics.

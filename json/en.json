@@ -22,7 +22,7 @@
 	"Games.submitTitle": "Title:",
 	"Games.linkTooltip": "Save and link to blocks.",
 	"Games.runTooltip": "Run the program you wrote.",
-	"Games.runProgram": "Run Program",
+	"Games.runProgram": "Run",
 	"Games.resetTooltip": "Stop the program and reset the level.",
 	"Games.resetProgram": "Reset",
 	"Games.help": "Help",

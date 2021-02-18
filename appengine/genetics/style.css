@@ -1,5 +1,5 @@
 #blockly {
-  position: fixed;
+  position: relative;
   bottom: 10px;
 }
 
